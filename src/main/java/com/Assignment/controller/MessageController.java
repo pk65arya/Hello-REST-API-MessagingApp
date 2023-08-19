@@ -21,4 +21,8 @@ public class MessageController {
     public String getFirstLastName(@RequestBody User user){
         return "Hello "+user.getFirstName() +" "+user.getLastName() +"From BridgeLabz";
     }
+    @PutMapping("/hello/put/{firstName}")
+    public String sayHelloWithput(@PathVariable String firstName,@RequestParam String lastName){
+        return "Hello " + firstName + " " + lastName + "from BridgeLabz";
+    }
 }
