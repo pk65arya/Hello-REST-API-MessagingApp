@@ -1,9 +1,7 @@
 package com.Assignment.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.Assignment.entity.User;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MessageController {
@@ -18,5 +16,9 @@ public class MessageController {
     @GetMapping("/hello/{name}")
     public String hello(@PathVariable String name){
         return "Hello "+name+ "From BridgeLabz";
+    }
+    @PostMapping("/hello")
+    public String getFirstLastName(@RequestBody User user){
+        return "Hello "+user.getFirstName() +" "+user.getLastName() +"From BridgeLabz";
     }
 }
